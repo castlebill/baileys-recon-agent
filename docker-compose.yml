@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  zuku-ftth-bot:
+    build: .
+    container_name: zuku-ftth-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - zuku-sessions:/app/sessions
+
+volumes:
+  zuku-sessions:
+    driver: local
